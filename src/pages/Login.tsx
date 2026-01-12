@@ -36,9 +36,9 @@ export default function Login() {
 
       navigate('/chat');
 
-    } catch (err: any) {
+    } catch (err) {
 
-      setError(err.message || 'Login failed');
+      setError(err instanceof Error ? err.message : 'Login failed');
 
     } finally {
 
@@ -62,7 +62,7 @@ export default function Login() {
 
       justifyContent: 'center',
 
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      background: '#1F1F1F'
 
     }}>
 
@@ -78,11 +78,11 @@ export default function Login() {
 
         <div style={{
 
-          background: 'var(--panel)',
+          background: '#1F1F1F',
 
           borderRadius: '16px',
 
-          boxShadow: 'var(--shadow)',
+          border: '2px solid rgb(178, 241, 66)',
 
           padding: '40px',
 
@@ -98,9 +98,11 @@ export default function Login() {
 
               fontWeight: '700', 
 
-              color: 'var(--text)',
+              color: '#ffffff',
 
-              margin: '0 0 8px 0'
+              margin: '0 0 8px 0',
+
+              fontFamily: "'Fira Code', monospace"
 
             }}>
 
@@ -112,9 +114,11 @@ export default function Login() {
 
               fontSize: '14px', 
 
-              color: 'var(--muted)',
+              color: 'rgba(255, 255, 255, 0.7)',
 
-              margin: 0
+              margin: 0,
+
+              fontFamily: "'Fira Code', monospace"
 
             }}>
 
@@ -132,11 +136,11 @@ export default function Login() {
 
             <div style={{
 
-              background: '#fee',
+              background: 'rgba(239, 68, 68, 0.2)',
 
-              border: '1px solid #fcc',
+              border: '1px solid rgb(239, 68, 68)',
 
-              color: '#c33',
+              color: '#ff6b6b',
 
               padding: '12px 16px',
 
@@ -144,7 +148,9 @@ export default function Login() {
 
               fontSize: '14px',
 
-              marginBottom: '20px'
+              marginBottom: '20px',
+
+              fontFamily: "'Fira Code', monospace"
 
             }}>
 
@@ -170,9 +176,11 @@ export default function Login() {
 
                 fontWeight: '500',
 
-                color: 'var(--text)',
+                color: '#ffffff',
 
-                marginBottom: '8px'
+                marginBottom: '8px',
+
+                fontFamily: "'Fira Code', monospace"
 
               }}>
 
@@ -200,7 +208,7 @@ export default function Login() {
 
                   padding: '12px 16px',
 
-                  border: '1px solid var(--border)',
+                  border: '1px solid rgb(178, 241, 66)',
 
                   borderRadius: '8px',
 
@@ -208,13 +216,19 @@ export default function Login() {
 
                   outline: 'none',
 
-                  transition: 'border-color 0.2s'
+                  background: '#1F1F1F',
+
+                  color: '#ffffff',
+
+                  transition: 'border-color 0.2s',
+
+                  fontFamily: "'Fira Code', monospace"
 
                 }}
 
-                onFocus={(e) => e.target.style.borderColor = 'var(--ai)'}
+                onFocus={(e) => e.target.style.borderColor = 'rgb(178, 241, 66)'}
 
-                onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
+                onBlur={(e) => e.target.style.borderColor = 'rgb(178, 241, 66)'}
 
               />
 
@@ -232,9 +246,11 @@ export default function Login() {
 
                 fontWeight: '500',
 
-                color: 'var(--text)',
+                color: '#ffffff',
 
-                marginBottom: '8px'
+                marginBottom: '8px',
+
+                fontFamily: "'Fira Code', monospace"
 
               }}>
 
@@ -262,7 +278,7 @@ export default function Login() {
 
                   padding: '12px 16px',
 
-                  border: '1px solid var(--border)',
+                  border: '1px solid rgb(178, 241, 66)',
 
                   borderRadius: '8px',
 
@@ -270,13 +286,19 @@ export default function Login() {
 
                   outline: 'none',
 
-                  transition: 'border-color 0.2s'
+                  background: '#1F1F1F',
+
+                  color: '#ffffff',
+
+                  transition: 'border-color 0.2s',
+
+                  fontFamily: "'Fira Code', monospace"
 
                 }}
 
-                onFocus={(e) => e.target.style.borderColor = 'var(--ai)'}
+                onFocus={(e) => e.target.style.borderColor = 'rgb(178, 241, 66)'}
 
-                onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
+                onBlur={(e) => e.target.style.borderColor = 'rgb(178, 241, 66)'}
 
               />
 
@@ -294,9 +316,9 @@ export default function Login() {
 
                 width: '100%',
 
-                background: loading ? '#9ca3af' : 'var(--ai)',
+                background: loading ? 'rgba(178, 241, 66, 0.5)' : 'rgb(178, 241, 66)',
 
-                color: 'white',
+                color: '#000000',
 
                 padding: '12px 24px',
 
@@ -312,19 +334,29 @@ export default function Login() {
 
                 transition: 'all 0.2s',
 
-                opacity: loading ? 0.6 : 1
+                opacity: loading ? 0.6 : 1,
+
+                fontFamily: "'Fira Code', monospace"
 
               }}
 
               onMouseEnter={(e) => {
 
-                if (!loading) e.currentTarget.style.transform = 'translateY(-1px)';
+                if (!loading) {
+
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(178, 241, 66, 0.4)';
+
+                }
 
               }}
 
               onMouseLeave={(e) => {
 
                 e.currentTarget.style.transform = 'translateY(0)';
+
+                e.currentTarget.style.boxShadow = 'none';
 
               }}
 

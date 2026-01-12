@@ -16,7 +16,7 @@ export default function Signup() {
 
       justifyContent: 'center',
 
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      background: '#1F1F1F'
 
     }}>
 
@@ -32,11 +32,11 @@ export default function Signup() {
 
         <div style={{
 
-          background: 'var(--panel)',
+          background: '#1F1F1F',
 
           borderRadius: '16px',
 
-          boxShadow: 'var(--shadow)',
+          border: '2px solid rgb(178, 241, 66)',
 
           padding: '40px',
 
@@ -50,9 +50,11 @@ export default function Signup() {
 
             fontWeight: '700', 
 
-            color: 'var(--text)',
+            color: '#ffffff',
 
-            margin: '0 0 16px 0'
+            margin: '0 0 16px 0',
+
+            fontFamily: "'Fira Code', monospace"
 
           }}>
 
@@ -66,11 +68,13 @@ export default function Signup() {
 
             fontSize: '16px', 
 
-            color: 'var(--muted)',
+            color: 'rgba(255, 255, 255, 0.7)',
 
             margin: '0 0 24px 0',
 
-            lineHeight: '1.6'
+            lineHeight: '1.6',
+
+            fontFamily: "'Fira Code', monospace"
 
           }}>
 
@@ -92,9 +96,9 @@ export default function Signup() {
 
               display: 'inline-block',
 
-              background: 'var(--ai)',
+              background: 'rgb(178, 241, 66)',
 
-              color: 'white',
+              color: '#000000',
 
               padding: '12px 32px',
 
@@ -106,7 +110,25 @@ export default function Signup() {
 
               fontWeight: '600',
 
-              transition: 'all 0.2s'
+              transition: 'all 0.2s',
+
+              fontFamily: "'Fira Code', monospace"
+
+            }}
+
+            onMouseEnter={(e) => {
+
+              e.currentTarget.style.transform = 'translateY(-1px)';
+
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(178, 241, 66, 0.4)';
+
+            }}
+
+            onMouseLeave={(e) => {
+
+              e.currentTarget.style.transform = 'translateY(0)';
+
+              e.currentTarget.style.boxShadow = 'none';
 
             }}
 
